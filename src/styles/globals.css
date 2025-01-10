@@ -13,6 +13,34 @@
         h6 {
             font-weight: 900;
         }
+
+        h1 {
+            font-family: 'Londrina Solid', sans-serif;
+            font-size: 2.25rem;
+        }
+
+        h2 {
+            font-family: 'Londrina Solid', sans-serif;
+            font-size: 2rem;
+        }
+
+        h3 {
+            font-family: 'Londrina Solid', sans-serif;
+            font-size: 1.75rem;
+        }
+
+        h4,
+        h5,
+        h6 {
+            font-family: 'Londrina Solid', sans-serif;
+        }
+
+        p {
+            font-family: 'Roboto Condensed', sans-serif;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
         a {
             text-decoration: underline;
             transition: all 0.3s;
@@ -20,15 +48,18 @@
                 text-decoration-color: var(--color-primary);
             }
         }
-        > p,
-        > ul,
-        > ol {
+
+        ul,
+        ol {
             margin-top: 1rem;
             margin-bottom: 1rem;
+            font-family: 'Roboto Condensed', sans-serif;
         }
+
         > :first-child {
             margin-top: 0;
         }
+
         > :last-child {
             margin-bottom: 0;
         }

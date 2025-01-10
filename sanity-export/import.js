@@ -1,5 +1,5 @@
-const path = require('path');
 const fs = require('fs');
+const path = require('path');
 const { createClient } = require('@sanity/client');
 const sanityImport = require('@sanity/import');
 const Configstore = require('configstore');
@@ -16,7 +16,20 @@ const client = createClient({
     useCdn: false
 });
 
-const input = fs.createReadStream(path.join(__dirname, 'export.tar.gz'));
+const inputFilePath = path.join(__dirname, 'export.tar.gz');
+console.log(`Reading file from: ${inputFilePath}`);
+
+if (!fs.existsSync(inputFilePath)) {
+    console.error(`File not found: ${inputFilePath}`);
+    process.exit(1);
+}
+
+const input = fs.createReadStream(inputFilePath);
+
+input.on('error', (err) => {
+    console.error(`Error reading file: ${err.message}`);
+    process.exit(1);
+});
 
 sanityImport(input, {
     client: client,

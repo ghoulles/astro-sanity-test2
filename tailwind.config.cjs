@@ -32,12 +32,12 @@ export default {
                     secondary: '#214f2d',
                     'secondary-content': '#171227',
                     accent: '#214f2d', // other button color//
-                    'accent-content': '#fcfff5',
+                    'accent-content': '#fcfff5', //text in button//
                     neutral: '#112917', //banner color//
-                    'neutral-content': '#fcfff5',
-                    'base-100': '#112917',
+                    'neutral-content': '#fcfff5', //text in banner//
+                    'base-100': '#112917', // changes color of banner and buttons//
                     'base-200': '#2e293c',
-                    'base-content': '#ffffff',
+                    'base-content': '#fcfff5', // changes text ins banner and buttons//
                     '--rounded-btn': '.375rem',
                     '--rounded-badge': '9999px'
                 }
@@ -46,16 +46,16 @@ export default {
                 light: {
                     ...require('daisyui/src/theming/themes')['light'],
                     primary: '#214f2d', //more buttons//
-                    'primary-content': '#fcfff5',
+                    'primary-content': '#fcfff5', //text in buttons//
                     secondary: '#214f2d', //more buttons//
-                    'secondary-content': '#fcfff5',
+                    'secondary-content': '#fcfff5', //text in buttons//
                     accent: '#214f2d', //more buttons//
-                    'accent-content': '#fcfff5',
+                    'accent-content': '#fcfff5', //textin buttons//
                     neutral: '#214f2d',
                     'neutral-content': '#ffffff',
-                    'base-100': '#ffffff',
-                    'base-200': '#d7d8e4',
-                    'base-content': '#fcfff5',
+                    'base-100': '#ffffff', //changes entire background colour//
+                    'base-200': '#d7d8e4', //section borders//
+                    'base-content': '#112917', // text color (body)//
                     '--rounded-btn': '.375rem',
                     '--rounded-badge': '9999px'
                 }

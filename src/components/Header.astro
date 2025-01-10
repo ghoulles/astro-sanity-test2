@@ -18,53 +18,55 @@ const { title, logo, navLinks, 'data-sb-field-path': fieldPath } = Astro.props;
                     <ResponsiveImage _id={logo._id} src={logo.src} width={logo.dimensions?.width} height={logo.dimensions?.height} alt={logo.alt} />
                 </a>
             ) : (
-                <a class="text-xl font-bold sm:text-2xl" href="/" data-sb-field-path=".title">
+                <a class="text-xl font-bold sm:text-2xl font-londrina" href="/" data-sb-field-path=".title">
                     {title}
                 </a>
             )
         }
-        {
-            navLinks && navLinks.length > 0 && (
-                <>
-                    <ul class="hidden lg:flex lg:flex-wrap lg:items-center lg:gap-6" data-sb-field-path=".navLinks">
-                        {navLinks.map((item, index) => (
-                            <li>
-                                <Action
-                                    action={item}
-                                    class:list={[item._type === 'actionLink' ? 'no-underline hover:underline' : 'px-4 py-3 h-auto min-h-0']}
-                                    data-sb-field-path={`.${index}`}
-                                />
-                            </li>
-                        ))}
-                    </ul>
-                    <div class="relative lg:hidden">
-                        <button
-                            class="inline-flex justify-center items-center w-10 h-10 relative z-[2] nav-toggle"
-                            aria-label="Open Menu"
-                            aria-expanded="false"
-                            aria-controls="nav-panel"
-                        >
-                            <span class="nav-toggle-icon" />
-                        </button>
-                        <div id="nav-panel" class="nav-panel absolute rounded-box -top-2 -right-2 z-[1] shadow-xl bg-base-100 border border-base-200/70">
-                            <ul class="flex flex-col px-4 pb-6 pt-14" data-sb-field-path=".navLinks">
-                                {navLinks.map((item, index) => (
-                                    <li>
-                                        <Action
-                                            action={item}
-                                            class:list={[
-                                                item._type === 'actionLink' ? 'block py-2 no-underline hover:underline' : 'w-full px-4 py-3.5 h-auto min-h-0'
-                                            ]}
-                                            data-sb-field-path={`.${index}`}
-                                        />
-                                    </li>
-                                ))}
-                            </ul>
+        <div class="font-roboto">
+            {
+                navLinks && navLinks.length > 0 && (
+                    <>
+                        <ul class="hidden lg:flex lg:flex-wrap lg:items-center lg:gap-6" data-sb-field-path=".navLinks">
+                            {navLinks.map((item, index) => (
+                                <li>
+                                    <Action
+                                        action={item}
+                                        class:list={[item._type === 'actionLink' ? 'no-underline hover:underline' : 'px-4 py-3 h-auto min-h-0']}
+                                        data-sb-field-path={`.${index}`}
+                                    />
+                                </li>
+                            ))}
+                        </ul>
+                        <div class="relative lg:hidden">
+                            <button
+                                class="inline-flex justify-center items-center w-10 h-10 relative z-[2] nav-toggle"
+                                aria-label="Open Menu"
+                                aria-expanded="false"
+                                aria-controls="nav-panel"
+                            >
+                                <span class="nav-toggle-icon" />
+                            </button>
+                            <div id="nav-panel" class="nav-panel absolute rounded-box -top-2 -right-2 z-[1] shadow-xl bg-base-100 border border-base-200/70">
+                                <ul class="flex flex-col px-4 pb-6 pt-14" data-sb-field-path=".navLinks">
+                                    {navLinks.map((item, index) => (
+                                        <li>
+                                            <Action
+                                                action={item}
+                                                class:list={[
+                                                    item._type === 'actionLink' ? 'block py-2 no-underline hover:underline' : 'w-full px-4 py-3.5 h-auto min-h-0'
+                                                ]}
+                                                data-sb-field-path={`.${index}`}
+                                            />
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                </>
-            )
-        }
+                    </>
+                )
+            }
+        </div>
     </div>
 </nav>
 
