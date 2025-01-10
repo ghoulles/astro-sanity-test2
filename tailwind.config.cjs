@@ -13,9 +13,12 @@ export default {
                 neutral: colors.neutral
             },
             fontFamily: {
-                HeaderText: ['"Londrina Solid"', 'sans serif'],
-                BodyText: ['"Roboto Condensed"', 'sans serif'],
-            }
+                HeaderText: ['"Londrina Solid"', 'serif'],
+                BodyText: ['"Roboto Condensed"', 'serif'],
+            },
+            backgroundColor: {
+                'custom-bg': '#fcfff5', // Custom background color
+            },
         }
     },
     plugins: [require('daisyui')],
@@ -24,15 +27,15 @@ export default {
             {
                 dark: {
                     ...require('daisyui/src/theming/themes')['dark'],
-                    primary: '#ffae9c',
-                    'primary-content': '#171227',
-                    secondary: '#fff2d7',
+                    primary: '#214f2d', //button color//
+                    'primary-content': '#fcfff5',
+                    secondary: '#214f2d',
                     'secondary-content': '#171227',
-                    accent: '#e3f1ff',
-                    'accent-content': '#171227',
-                    neutral: '#2e293c',
-                    'neutral-content': '#ffffff',
-                    'base-100': '#171227',
+                    accent: '#214f2d', // other button color//
+                    'accent-content': '#fcfff5',
+                    neutral: '#112917', //banner color//
+                    'neutral-content': '#fcfff5',
+                    'base-100': '#112917',
                     'base-200': '#2e293c',
                     'base-content': '#ffffff',
                     '--rounded-btn': '.375rem',
@@ -42,17 +45,17 @@ export default {
             {
                 light: {
                     ...require('daisyui/src/theming/themes')['light'],
-                    primary: '#ffae9c',
-                    'primary-content': '#171227',
-                    secondary: '#fff2d7',
-                    'secondary-content': '#171227',
-                    accent: '#e3f1ff',
-                    'accent-content': '#171227',
-                    neutral: '#171227',
+                    primary: '#214f2d', //more buttons//
+                    'primary-content': '#fcfff5',
+                    secondary: '#214f2d', //more buttons//
+                    'secondary-content': '#fcfff5',
+                    accent: '#214f2d', //more buttons//
+                    'accent-content': '#fcfff5',
+                    neutral: '#214f2d',
                     'neutral-content': '#ffffff',
                     'base-100': '#ffffff',
                     'base-200': '#d7d8e4',
-                    'base-content': '#171227',
+                    'base-content': '#fcfff5',
                     '--rounded-btn': '.375rem',
                     '--rounded-badge': '9999px'
                 }
