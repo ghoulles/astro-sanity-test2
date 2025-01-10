@@ -16,8 +16,23 @@ const client = createClient({
     useCdn: false
 });
 
-let currentStep = null;
-const options = {
+module.exports = {
+
+    plugins: [
+  
+      require('postcss-import'),
+  
+      require('tailwindcss'),
+  
+      require('autoprefixer'),
+  
+    ],
+  
+  }
+
+let currentStep; // Declare currentStep
+
+const exportConfig = {
     client: client,
     dataset: 'production',
     outputPath: path.join(__dirname, compress ? 'export.tar.gz' : 'export.json'),
@@ -34,12 +49,15 @@ const options = {
                 return;
             }
             currentStep = step;
-            console.log(step);
+            console.log(`Step: ${step}`);
+            console.log(`Current: ${current}`);
+            console.log(`Total: ${total}`);
+            console.log(`Update: ${update}`);
         }
     }
 };
 
 console.log('Start Sanity export');
-exportDataset(options).then(() => {
+exportDataset(exportConfig).then(() => {
     console.log('Start export finished');
 });

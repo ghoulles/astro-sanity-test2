@@ -6,9 +6,13 @@ import Section from '@components/Section.astro';
 
 interface Props extends TestimonialsSection {
     'data-sb-field-path'?: string;
+    author: {
+        name: string;
+        title?: string;
+    };
 }
 
-const { heading, body, items, columns, ...rest } = Astro.props;
+const { heading, body, items, columns, author, ...rest } = Astro.props;
 ---
 
 <Section {...rest} class="text-center">
@@ -32,4 +36,8 @@ const { heading, body, items, columns, ...rest } = Astro.props;
             </div>
         )
     }
+    <div class="font-londrina">
+        <span data-sb-field-path=".name">{author.name}</span>
+        {author.title && (<>{', '}<span data-sb-field-path=".title">{author.title}</span></>)}
+    </div>
 </Section>

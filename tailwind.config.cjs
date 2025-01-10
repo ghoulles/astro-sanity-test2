@@ -13,7 +13,8 @@ export default {
                 neutral: colors.neutral
             },
             fontFamily: {
-                sans: ['Mulish', ...defaultTheme.fontFamily.sans]
+                HeaderText: ['"Londrina Solid"', 'sans serif'],
+                BodyText: ['"Roboto Condensed"', 'sans serif'],
             }
         }
     },
