@@ -21,7 +21,6 @@ const options = {
     client: client,
     dataset: 'production',
     outputPath: path.join(__dirname, compress ? 'export.tar.gz' : 'export.json'),
-
     compress: compress,
     drafts: true,
     assets: true,
